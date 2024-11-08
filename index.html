@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Sock Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 1rem;
+            text-decoration: none;
+        }
+        .banner {
+            text-align: center;
+            padding: 0.7rem;
+        }
+        .banner h2 {
+            margin: 0;
+        }
+        .product-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .product {
+            background-color: #fff;
+            padding: 1rem;
+            width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        } 
+        .product:hover{
+            cursor: pointer;
+            box-shadow: 2px 2px 2px 1px #f4f4f4;
+        }
+        .product a{
+            text-decoration: none;
+            color: black;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product h3 {
+            margin: 0.5rem 0;
+        }
+        .contact-form {
+            padding: 2rem;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+            border: none;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            background-color: #f1c40f;
+            color: #333;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 999;
+            cursor: pointer;
+        }
+        @media only screen and (max-width:600px) {
+            .whatsapp-icon img {
+                width: 60px;
+                margin-left: 10px
+            }
+            .product #img2{
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Your Sock Store</h1>
+        <nav>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Banner Section -->
+    <section class="banner">
+        <h2>Discover Comfort & Style with Our Premium Socks!</h2>
+        <p>Quality socks at the best prices.</p>
+    </section>
+
+    <!-- Product Section -->
+    <section id="shop" class="product-section">
+        <div class="product">
+            <a href="product1.html">
+            <img src="IMG-20241106-WA0001-removebg-preview.png" alt="Colorful Sock">
+            <h3>Black Sock</h3>
+            <p>$2.50</p>
+            </a>
+        </div>
+        <div class="product">
+            <a href="product2.html">
+            <img src="IMG-20241106-WA0005-removebg-preview.png" alt="Comfy Ankle Sock">
+            <h3>white Sock</h3>
+            <p>$2.50</p>
+            </a>
+        </div>
+        <!-- Add more products as needed -->
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact-form">
+        <h2>Contact Us</h2>
+        <p>Have questions? Get in touch with us!</p>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea rows="4" placeholder="Your Message"></textarea>
+        <button type="submit">Send</button>
+    </section>
+    <div class="whatsapp-icon"><a href="https://wa.me/+96103226752"><img src="whatsapp.svg" width="150px" style="border-radius:50%" alt="WhatsApp"></a></div>
+</body>
+</html>
