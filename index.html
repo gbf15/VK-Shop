@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Sock Store</title>
     <style>
-        body {
+           body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -14,11 +14,12 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 1rem;
+            
             text-align: center;
         }
         header h1 {
             margin: 0;
+            font-size: 25px;
         }
         nav a {
             color: #fff;
@@ -42,13 +43,12 @@
         .product {
             background-color: #fff;
             padding: 1rem;
-            width: 200px;
+            width: 500px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         } 
         .product:hover{
             cursor: pointer;
-            box-shadow: 2px 2px 2px 1px #f4f4f4;
+            box-shadow: 1px 1px 1px 1px black solid ;
         }
         .product a{
             text-decoration: none;
@@ -61,6 +61,39 @@
         .product h3 {
             margin: 0.5rem 0;
         }
+
+        /*product2 */
+
+        .product1 {
+            background-color: #fff;
+            padding: 1rem;
+            width: 100px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        } .product1:hover{
+            cursor: pointer;
+            box-shadow: 1px 1px 1px 1px black solid ;
+        }
+        .product1 a{
+            text-decoration: none;
+            color: black;
+        }
+        .product1 img {
+            width: 100%;
+            height: auto;
+        }
+        .product1 h3 {
+            margin: 0.5rem 0;
+        }
+
+        .product-section1  {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center ;
+            padding: -20px;
+        }
+
         .contact-form {
             padding: 2rem;
             background-color: #333;
@@ -89,6 +122,14 @@
             z-index: 999;
             cursor: pointer;
         }
+        .linkS{
+            padding: 10px;
+        }
+        .linkS a{
+            text-decoration: none;
+            display: inline;
+            justify-content: space-between;
+        }
         @media only screen and (max-width:600px) {
             .whatsapp-icon img {
                 width: 60px;
@@ -96,25 +137,26 @@
             }
             .product #img2{
                 width: 100%;
-            }
-        }
+                
+            }}
     </style>
 </head>
 <body>
 
     <!-- Header -->
     <header>
-        <h1>Your Sock Store</h1>
+        <img src="IMG-20241106-WA0004-removebg-preview.png" width="65px">
+        <h1>VK - Store</h1><br>
         <nav>
             <a href="#shop">Shop</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-        </nav>
+        </nav><br>
     </header>
 
     <!-- Banner Section -->
     <section class="banner">
-        <h2>Discover Comfort & Style with Our Premium Socks!</h2>
+        <h2>Discover Our Premium Socks!</h2>
         <p>Quality socks at the best prices.</p>
     </section>
 
