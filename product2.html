@@ -14,11 +14,12 @@
         header {
             background-color: #333;
             color: #fff;
-            padding: 1rem;
+            
             text-align: center;
         }
         header h1 {
             margin: 0;
+            font-size: 25px;
         }
         nav a {
             color: #fff;
@@ -44,7 +45,8 @@
             padding: 1rem;
             width: 500px;
             text-align: center;
-        } .product:hover{
+        } 
+        .product:hover{
             cursor: pointer;
             box-shadow: 1px 1px 1px 1px black solid ;
         }
@@ -94,15 +96,15 @@
 
         .contact-form {
             padding: 2rem;
-            background-color: #333;
             color: #fff;
             text-align: center;
+            width: 50%;
         }
         .contact-form input, .contact-form textarea {
-            width: 80%;
+            width: 100%;
             padding: 0.5rem;
             margin: 0.5rem 0;
-            border: none;
+            border: black solid;
             border-radius: 5px;
         }
         .contact-form button {
@@ -115,8 +117,15 @@
         }
         .whatsapp-icon {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 5px;
+            right: 1px;
+            z-index: 999;
+            cursor: pointer;
+        }
+        .whatsapp-icon1 {
+            position: fixed;
+            bottom: 90px;
+            right: 5px;
             z-index: 999;
             cursor: pointer;
         }
@@ -137,24 +146,101 @@
                 width: 100%;
                 
             }}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 80%;
+    max-width: 400px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content h3, .modal-content p {
+    margin: 0.5rem 0;
+}
+
+#btn {
+            background-color: #f1c40f;
+            color: #333;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block;
+        }
     </style>
 </head>
 <body>
 
+    
     <!-- Header -->
     <header>
-        <h1>Your Sock Store</h1>
+        <img src="IMG-20241106-WA0004-removebg-preview.png" width="65px">
+        <h1>VK - Store</h1><br> 
         <nav>
             <a href="index.html">Shop</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
-        </nav>
+        </nav><br>
     </header>
 
-    <div class="linkS">
-        <a href="index.html"><u>Shope    // </u></a><a href="product1.html"><u  >Black socks</u></a>
-      </div>
+<!-- Cart Modal -->
+<div id="cart-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="toggleCartModal()">&times;</span>
+        <h3>Your Cart</h3>
 
+<!-- ul -->
+        <ul id="cart-items"> <!-- Contact Form -->
+        
+                
+           
+        </ul>
+        <section id="contact" class="contact-form">
+
+            <input type="text" placeholder="Your Name" required>
+            <textarea rows="4" placeholder="Addres"></textarea>
+        </section>
+
+        <center>
+            <p>Total Price: $<span id="total-price">0.00</span></p>
+        <button onclick="checkout()">Checkout</button>
+        </center>
+    </div>
+</div>
+
+
+
+<!-- Button to Open Cart Modal -->
+
+
+
+          <div class="linkS">
+            <a href="index.html"><u>Shope    // </u></a><a href="product1.html"><u  >Black socks</u></a>
+          </div>
 
     <!-- Product Section -->
     <section id="shop" class="product-section">
@@ -171,36 +257,120 @@
         </div>
     </section>
 
-    <section id="shop" class="product-section1">
-        <div class="product1">
     <table>
         <tr>
-           <td> <img id="i1mg" onclick="phones(this.src)" src="IMG-20241106-WA0002-removebg-preview.png" alt="Colorful Sock" ><br></td>
-            <td><img onclick="phones(this.src)" class="img" src="IMG-20241106-WA0005-removebg-preview.png" alt="Colorful Sock"></td>
-            </tr>
-            </table>
-        </div>
-</section>
+            <td><p style="color: #f4f4f4;">.............</p></td>
+            <td><section id="shop" class="product-section1">
+                <div class="product1">
+            <table>
+                <tr>
+                    
+                    <td> <img id="i1mg" onclick="phones(this.src)" src="IMG-20241106-WA0002-removebg-preview.png" alt="Colorful Sock" ><br></td>
+                    <td><img onclick="phones(this.src)" class="img" src="IMG-20241106-WA0005-removebg-preview.png" alt="Colorful Sock"></td>
+                    </tr>
+                    </table>
+                </div><br>
+               
+        
+        </section></td>
+        </tr>
+    </table>
+<center><button id="btn" onclick="addToCart('White sock ', 5.00)">Add to Cart</button></center><br><br><br>
 
    
 
     
-    <div class="whatsapp-icon"><a href="https://wa.me/+96103226752"><img src="whatsapp.svg" width="150px" style="border-radius:50%" alt="WhatsApp"></a></div>
+    <div class="whatsapp-icon">
+        <a href="https://wa.me/+96103226752"><img src="whatsapp.svg" width="150px" style="border-radius:50%" alt="WhatsApp"></a>
+    </div><br><br>
+
+    <div class="whatsapp-icon1">
+        <a><img onclick="toggleCartModal()" src="images-removebg-preview (11).png" alt="cart" width="50px"></a>
+    </div>
 
     <script>
-        let cart = [];
-        let totalPrice = 0;
+        let cart1 = [];
+        let totalPrice1 = 0;
         let img = document.querySelector(".img");
 
         function addToCart(price) {
-            cart.push(price);
+            cart1.push(price);
             updateTotalPrice();
         }
 
         function phones(phone){
             img.src = phone ;;
         }
-    
+        let cart = [];
+let totalPrice = 0;
+
+function addToCart(productName, price) {
+    cart.push({ name: productName, price: price });
+    updateCartDisplay();
+}
+
+function updateCartDisplay() {
+    const cartItemsList = document.getElementById("cart-items");
+    const totalPriceDisplay = document.getElementById("total-price");
+
+    cartItemsList.innerHTML = "";
+    totalPrice = 0;
+
+    cart.forEach(item => {
+        const li = document.createElement("li");
+        li.textContent = `${item.name} - $${item.price.toFixed(2)}`;
+        cartItemsList.appendChild(li);
+        totalPrice += item.price;
+    });
+
+    totalPriceDisplay.textContent = totalPrice.toFixed(2);
+}
+
+function toggleCartModal() {
+    const modal = document.getElementById("cart-modal");
+    modal.style.display = (modal.style.display === "block") ? "none" : "block";
+}
+
+function checkout() {
+    if (cart.length === 0) {
+        alert("Your cart is empty!");
+        return;
+    }
+
+    // Retrieve contact form details
+    const name = document.querySelector(".contact-form input[type='text']").value;
+    const userMessage = document.querySelector(".contact-form textarea").value;
+
+    if (!name || !userMessage) {
+        alert("Please fill out your name and message in the contact form.");
+        return;
+    }
+
+    // Generate a summary message of the cart with contact form details
+    let message = `Order Details:\n\nName: ${name}\nMessage: ${userMessage}\n\nItems:\n`;
+
+    cart.forEach((item, index) => {
+        message += `${index + 1}. ${item.name} - $${item.price.toFixed(2)}\n`;
+    });
+
+    message += `\nTotal: $${totalPrice.toFixed(2)}\nThank you for your purchase!`;
+
+    // Encode the message for URL
+    const encodedMessage = encodeURIComponent(message);
+    const phoneNumber = "96103226752"; // Replace with your WhatsApp number
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+    // Open WhatsApp with the pre-filled message
+    window.open(whatsappURL, "_blank");
+
+    // Clear the cart and form fields after sending the message
+    cart = [];
+    updateCartDisplay();
+    document.querySelector(".contact-form input[type='text']").value = "";
+    document.querySelector(".contact-form textarea").value = "";
+    toggleCartModal();
+}
+
         
         
     </script>
